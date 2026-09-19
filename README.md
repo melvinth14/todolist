@@ -26,9 +26,11 @@ The app has no backend, framework, build step, external database, or runtime dep
 - `index.html` is the canonical GitHub Pages entry point.
 - `todolist.html` is a compatible direct entry point.
 - `todolist.css` contains responsive design tokens, layout, states, and media queries.
-- `todolist.js` contains storage normalization, task state, filtering, rendering, and event delegation.
+- `task-store.js` owns task normalization, ID creation, validation, and localStorage persistence.
+- `task-view.js` owns safe HTML escaping, task-list rendering, statistics, and progress rendering.
+- `todolist.js` is the controller that coordinates state changes, filters, forms, and delegated events.
 
-The browser renders the current task state from one in-memory collection. Derived statistics and filtered rows are recalculated after every state change, keeping the UI synchronized with the underlying data.
+The browser renders the current task state from one in-memory collection. Derived statistics, completion progress, and filtered rows are recalculated after every state change, keeping the UI synchronized with the underlying data.
 
 ## Security and Reliability
 

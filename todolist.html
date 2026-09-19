@@ -6,6 +6,8 @@
   <meta name="theme-color" content="#f6f7fb">
   <title>FocusList | Daily task planner</title>
   <link rel="stylesheet" href="todolist.css">
+  <script src="task-store.js" defer></script>
+  <script src="task-view.js" defer></script>
   <script src="todolist.js" defer></script>
 </head>
 <body>
@@ -31,6 +33,7 @@
         <div class="stat"><div><div class="stat-label">Completed</div><div class="stat-value" id="completedCount">0</div></div><span class="stat-dot" aria-hidden="true"></span></div>
         <div class="stat"><div><div class="stat-label">Pending</div><div class="stat-value" id="pendingCount">0</div></div><span class="stat-dot" aria-hidden="true"></span></div>
       </section>
+      <div class="progress-summary" aria-label="Completion progress"><div class="progress-track"><span id="progressFill"></span></div><span id="progressLabel">Ready to focus</span></div>
 
       <section class="workspace" aria-label="Task manager">
         <div class="toolbar">
