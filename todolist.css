@@ -105,3 +105,12 @@ h1 { font-size: clamp(2rem, 4vw, 3.15rem); line-height: .98; letter-spacing: -2p
   .task-item { padding: 15px 13px; grid-template-columns: 24px 1fr; }
   .task-actions { grid-column: 2; opacity: 1; margin-top: -5px; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
