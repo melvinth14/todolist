@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>FocusList | Daily task planner</title>
+  <link rel="stylesheet" href="todolist.css">
+  <script src="todolist.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">✓</div>
+          <div><div class="brand-name">FocusList</div><div class="brand-subtitle">A calmer way to get things done</div></div>
+        </div>
+        <div class="date-label" id="todayLabel"></div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="intro" aria-labelledby="pageTitle">
+        <div><h1 id="pageTitle">Good morning.<br>What’s your focus?</h1><p class="intro-copy">Keep today clear, intentional, and moving forward.</p></div>
+        <div class="status-note" id="statusNote" role="status">All changes saved</div>
+      </section>
+
+      <section class="stats" aria-label="Task statistics">
+        <div class="stat"><div><div class="stat-label">Total tasks</div><div class="stat-value" id="totalCount">0</div></div><span class="stat-dot" aria-hidden="true"></span></div>
+        <div class="stat"><div><div class="stat-label">Completed</div><div class="stat-value" id="completedCount">0</div></div><span class="stat-dot" aria-hidden="true"></span></div>
+        <div class="stat"><div><div class="stat-label">Pending</div><div class="stat-value" id="pendingCount">0</div></div><span class="stat-dot" aria-hidden="true"></span></div>
+      </section>
+
+      <section class="workspace" aria-label="Task manager">
+        <div class="toolbar">
+          <label class="search-wrap"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Search tasks</span><input class="search-input" id="searchInput" type="search" placeholder="Search tasks..." autocomplete="off"></label>
+          <label class="sr-only" for="statusFilter">Filter by status</label><select class="filter-select" id="statusFilter"><option value="all">All tasks</option><option value="active">Active</option><option value="completed">Completed</option></select>
+          <label class="sr-only" for="priorityFilter">Filter by priority</label><select class="filter-select" id="priorityFilter"><option value="all">All priorities</option><option value="high">High priority</option><option value="medium">Medium priority</option><option value="low">Low priority</option></select>
+        </div>
+        <form class="task-form" id="taskForm">
+          <label class="sr-only" for="taskInput">New task title</label><input class="task-input" id="taskInput" type="text" placeholder="Add a task to your list..." maxlength="140" required>
+          <label class="sr-only" for="newPriority">New task priority</label><select class="filter-select priority-select" id="newPriority"><option value="high">High priority</option><option value="medium" selected>Medium priority</option><option value="low">Low priority</option></select>
+          <button class="add-button" type="submit">+ Add task</button>
+        </form>
+        <ul class="task-list" id="taskList" aria-live="polite"></ul>
+        <div class="empty-state" id="emptyState" hidden><div class="empty-icon" aria-hidden="true">✓</div><h2 id="emptyTitle">Your list is clear</h2><p id="emptyMessage">Add a task above and make today count.</p></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
